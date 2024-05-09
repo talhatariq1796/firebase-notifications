@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+#Notifications using Firebase#
+ 
+##Problem Statement:##
+Create a simple Firebase / React SPA in typescript. Set up emulators to run in dev mode. Create a simple notification system that allows a User to click 1 of three buttons and receive a notification corresponding to the button they pushed. When a User views a notification, it should be marked "read".
+ 
+You may use whatever UI components you are comfortable with. You will not be judged on styling but will be judged on your usage of the Firebase suite, code structure, code cleanliness, typescript usage, useful comments, and commit history.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Solution:##
+Following steps were taken to complete this task.
 
-## Available Scripts
+##Setting up environment in VS Code:##
+• Created an app using.
+o npx create-react-app firebase-notification –template typescript
+• Installed necessary libraries for firebase.
+Setting up Firebase:
+• Create a new project in Firebase Console
+• Created a web app.
+• Copied the code for firebase configuration.
+• Pasted that code in src/firebase-config.ts
+• Setup Firebase Emulator
+o Npm install -g firebase-tools
+o Firebase init
+• From the provided list, I chose Firestore and Emulators
+• Setup the db in native mode
+• Started the emulator
+o Firebase emulators:start
+ 
+##Coding Files:##
+• NotificationSystem.tsx
+o This file is responsible for the layout and the sending notification functionality.
+o Wrote a function responsible for sending notifications.
+o Added that function to onClick of all the 3 buttons
+• ViewNotifications.tsx
+o This file is responsible for creating the layout of notifications that appear on the same page when clicked any of the 3 buttons
+o I used a query that checks for “read” == false and displays those notifications only that are unread
+o Upon Clicking “mark as read”, the “read” is set to true and document is updated in db
+o This file holds a simple layout of showing the notifications
+• App.tsx
+o Finally, these components are integrated into the App.tsx file
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+##Run the code##
+• To run this code, simply run the “npm i” command that will install all the libraries
+• “npm start” to compile the application and open it in browser
+• Make sure the emulators are running
+o Firebase emulators:start
+ 
