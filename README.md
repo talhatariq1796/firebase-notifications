@@ -1,18 +1,22 @@
-#Notifications using Firebase#
+#Notifications using Firebase
  
-##Problem Statement:##
+##Problem Statement:
 Create a simple Firebase / React SPA in typescript. Set up emulators to run in dev mode. Create a simple notification system that allows a User to click 1 of three buttons and receive a notification corresponding to the button they pushed. When a User views a notification, it should be marked "read".
  
 You may use whatever UI components you are comfortable with. You will not be judged on styling but will be judged on your usage of the Firebase suite, code structure, code cleanliness, typescript usage, useful comments, and commit history.
 
-##Solution:##
+##Solution:
 Following steps were taken to complete this task.
 
-##Setting up environment in VS Code:##
+##Setting up environment in VS Code:
+
 • Created an app using.
 o npx create-react-app firebase-notification –template typescript
+
 • Installed necessary libraries for firebase.
-Setting up Firebase:
+
+##Setting up Firebase:
+
 • Create a new project in Firebase Console
 • Created a web app.
 • Copied the code for firebase configuration.
@@ -25,7 +29,8 @@ o Firebase init
 • Started the emulator
 o Firebase emulators:start
  
-##Coding Files:##
+##Coding Files:
+
 • NotificationSystem.tsx
 o This file is responsible for the layout and the sending notification functionality.
 o Wrote a function responsible for sending notifications.
@@ -38,7 +43,7 @@ o This file holds a simple layout of showing the notifications
 • App.tsx
 o Finally, these components are integrated into the App.tsx file
 
-##Run the code##
+##Run the code
 • To run this code, simply run the “npm i” command that will install all the libraries
 • “npm start” to compile the application and open it in browser
 • Make sure the emulators are running
